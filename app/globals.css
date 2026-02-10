@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luxury photography agency theme */
+:root {
+  --luxury-black: #0a0a0a;
+  --luxury-cream: #f5f0e6;
+  --luxury-gold: #c9a962;
+  --luxury-gold-light: #e5d4a1;
+  --luxury-gold-dark: #8b7355;
+  --luxury-charcoal: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 40 20% 4%;
+    --foreground: 40 15% 96%;
+    --card: 40 15% 10%;
+    --card-foreground: 40 15% 96%;
+    --popover: 40 10% 8%;
+    --popover-foreground: 40 15% 96%;
+    --primary: 43 45% 58%;
+    --primary-foreground: 40 20% 6%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 40 20% 8%;
+    --muted: 40 15% 25%;
+    --muted-foreground: 40 15% 75%;
+    --accent: 43 45% 58%;
+    --accent-foreground: 40 20% 6%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 22%;
+    --input: 40 15% 18%;
+    --ring: 43 45% 58%;
+    --radius: 0.5rem;
+    --sidebar-background: 40 20% 6%;
+    --sidebar-foreground: 40 15% 96%;
+    --sidebar-primary: 43 45% 58%;
+    --sidebar-primary-foreground: 40 20% 6%;
+    --sidebar-accent: 40 20% 15%;
+    --sidebar-accent-foreground: 40 15% 96%;
+    --sidebar-border: 40 15% 22%;
+    --sidebar-ring: 43 45% 58%;
+  }
+  .dark {
+    --background: 40 20% 4%;
+    --foreground: 40 15% 96%;
+    --card: 40 15% 10%;
+    --card-foreground: 40 15% 96%;
+    --border: 40 15% 22%;
+    --primary: 43 45% 58%;
+    --ring: 43 45% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gold-shine {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.4s ease-out forwards;
+}
+
+.animate-gold-shine {
+  animation: gold-shine 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
